@@ -1,100 +1,322 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GMH MS8</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111827;
-      color: white;
-      text-align: center;
-    }
+    <title>GMH MS8 - Site officiel</title>
 
-    header {
-      background: #e50914;
-      padding: 35px 15px;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
 
-    header p {
-      font-size: 18px;
-    }
+        header {
+            background: linear-gradient(135deg, #0066ff, #003b99);
+            color: white;
+            padding: 25px 15px;
+            text-align: center;
+        }
 
-    main {
-      padding: 30px 15px;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
 
-    .carte {
-      max-width: 600px;
-      margin: auto;
-      padding: 25px;
-      background: #1f2937;
-      border-radius: 15px;
-      box-shadow: 0 0 15px #00000055;
-    }
+        header p {
+            margin: 8px 0 0;
+            font-size: 16px;
+        }
 
-    h2 {
-      color: #facc15;
-    }
+        nav {
+            background: white;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-    .bouton {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 25px;
-      background: #e50914;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+        nav a {
+            color: #0066ff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 8px;
+            font-size: 14px;
+        }
 
-    footer {
-      margin-top: 35px;
-      padding: 20px;
-      background: #030712;
-      color: #d1d5db;
-    }
-  </style>
+        .hero {
+            background: linear-gradient(135deg, #007bff, #001f66);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .bouton {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 25px;
+            background: white;
+            color: #0066ff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #0056d6;
+            margin-bottom: 30px;
+        }
+
+        .presentation {
+            text-align: center;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .carte {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .carte:hover {
+            transform: translateY(-5px);
+        }
+
+        .carte h3 {
+            color: #0066ff;
+        }
+
+        .contact {
+            background: #0066ff;
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            padding: 40px 20px;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            margin-top: 15px;
+            background: white;
+            color: #0066ff;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #07152e;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
+
+<header>
     <h1>GMH MS8</h1>
-    <p>Bienvenue sur mon site officiel</p>
-  </header>
+    <p>Innovation • Technologie • Solutions numériques</p>
+</header>
 
-  <main>
-    <div class="carte">
-      <h2>GMH MS8 — Partie 2</h2>
+<nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-      <p>
-        Bienvenue sur la plateforme officielle de GMH MS8.
-        Retrouvez ici mes projets, mes musiques, mes vidéos
-        et mes actualités.
-      </p>
+<section class="hero" id="accueil">
 
-      <p>
-        On ne dort pas sous le même toit,
-        mais on marche sur la même terre.
-      </p>
+    <h2>Bienvenue chez GMH MS8</h2>
 
-      <a class="bouton" href="mailto:contact@gmhms8.com">
-        Me contacter
-      </a>
+    <p>
+        Votre plateforme numérique dédiée à l'innovation,
+        aux solutions technologiques et à la réalisation
+        de projets modernes.
+    </p>
+
+    <a class="bouton" href="#services">
+        Découvrir nos services
+    </a>
+
+</section>
+
+<section id="apropos">
+
+    <h2>À propos de GMH MS8</h2>
+
+    <div class="presentation">
+
+        <p>
+            GMH MS8 est une initiative tournée vers le numérique,
+            la technologie et l'innovation.
+        </p>
+
+        <p>
+            Notre ambition est de transformer les idées en projets
+            concrets et de proposer des solutions simples, modernes
+            et accessibles.
+        </p>
+
+        <p>
+            Nous croyons qu'une bonne idée peut devenir une grande
+            réalisation lorsqu'elle est accompagnée de créativité,
+            de détermination et de technologie.
+        </p>
+
     </div>
-  </main>
 
-  <footer>
-    © 2026 GMH MS8 — Tous droits réservés
-  </footer>
+</section>
+
+<section id="services">
+
+    <h2>Nos services</h2>
+
+    <div class="services">
+
+        <div class="carte">
+            <h3>💻 Solutions numériques</h3>
+            <p>
+                Création et accompagnement de projets numériques
+                adaptés à vos besoins.
+            </p>
+        </div>
+
+        <div class="carte">
+            <h3>📱 Services mobiles</h3>
+            <p>
+                Solutions et projets destinés aux utilisateurs
+                de smartphones et aux plateformes mobiles.
+            </p>
+        </div>
+
+        <div class="carte">
+            <h3>🌐 Projets web</h3>
+            <p>
+                Création de sites et de plateformes web modernes,
+                rapides et adaptés aux téléphones.
+            </p>
+        </div>
+
+        <div class="carte">
+            <h3>🚀 Innovation</h3>
+            <p>
+                Développement de nouvelles idées et recherche
+                de solutions technologiques innovantes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>Notre vision</h2>
+
+    <div class="presentation">
+
+        <p>
+            Construire un espace numérique où les idées,
+            la technologie et la créativité se rencontrent.
+        </p>
+
+        <p>
+            <strong>
+                « Chaque idée peut devenir une solution. »
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <div class="contact">
+
+        <h2>Contactez GMH MS8</h2>
+
+        <p>
+            Vous avez un projet, une idée ou une question ?
+            Nous sommes disponibles pour échanger avec vous.
+        </p>
+
+        <a
+            class="whatsapp"
+            href="https://wa.me/23672089545"
+            target="_blank">
+            📱 Nous contacter sur WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p><strong>GMH MS8</strong></p>
+
+    <p>
+        Innovation • Technologie • Solutions numériques
+    </p>
+
+    <p>
+        © 2026 GMH MS8 — Tous droits réservés
+    </p>
+
+</footer>
+
 </body>
 </html>

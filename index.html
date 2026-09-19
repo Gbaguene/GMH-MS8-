@@ -1,376 +1,585 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="PLUS-TECH - ETS GMH MS8, réparations, vente et solutions numériques.">
+<title>PLUS-TECH | Réparations & Services</title>
 
-    <title>GMH MS8 - Site officiel</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#102a43;line-height:1.6}
+a{text-decoration:none;color:inherit}
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
+header{
+background:#061b36;color:white;position:sticky;top:0;z-index:1000;
+box-shadow:0 2px 12px #0005
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #222;
-            line-height: 1.7;
-        }
+.nav{
+max-width:1200px;margin:auto;padding:12px 22px;
+display:flex;align-items:center;justify-content:space-between;gap:20px
+}
 
-        header {
-            background: linear-gradient(135deg, #0066ff, #003b99);
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:70px;height:70px;object-fit:contain;border-radius:50%}
+.brand h1{font-size:28px;line-height:1}
+.brand h1 span{color:#ff7417}
+.brand small{display:block;font-size:14px}
+.brand small b{color:#53d769}
 
-        .logo {
-            width: 160px;
-            height: 160px;
-            object-fit: contain;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
+nav{display:flex;align-items:center;gap:22px;font-weight:bold;font-size:14px}
+nav a:hover{color:#ff7417}
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 5px;
-        }
+.whatsapp{
+background:#19c95a;color:white;padding:11px 18px;
+border-radius:25px;font-weight:bold
+}
 
-        header p {
-            font-size: 20px;
-        }
+.hero{
+background:linear-gradient(110deg,#06275c,#0073ff 52%,#061b36);
+color:white
+}
 
-        nav {
-            background: white;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+.hero-inner{
+max-width:1200px;margin:auto;min-height:430px;
+display:grid;grid-template-columns:1fr 1fr;
+align-items:center;gap:35px;padding:55px 25px
+}
 
-        nav a {
-            text-decoration: none;
-            color: #0066cc;
-            font-weight: bold;
-            padding: 8px 15px;
-        }
+.hero h2{font-size:52px;line-height:1.05;margin:15px 0}
+.hero h2 span{color:#ff7417}
+.hero p{font-size:19px;max-width:570px;margin:15px 0 22px}
 
-        nav a:hover {
-            color: #ff6600;
-        }
+.checks{
+display:flex;flex-wrap:wrap;gap:16px;margin-bottom:15px
+}
 
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px;
-        }
+.cta{
+display:inline-block;background:#ff7417;color:white;
+padding:14px 25px;border-radius:30px;font-weight:bold
+}
 
-        .hero {
-            max-width: none;
-            text-align: center;
-            color: white;
-            background: linear-gradient(135deg, #0066ff, #003b99);
-            padding: 100px 20px;
-        }
+.hero-image{text-align:center}
+.hero-image img{
+width:min(100%,430px);max-height:350px;
+object-fit:contain;filter:drop-shadow(0 15px 20px #0007)
+}
 
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+.section{padding:50px 20px}
+.section.alt{background:#f4f8fc}
+.container{max-width:1200px;margin:auto}
 
-        .hero p {
-            max-width: 800px;
-            margin: auto;
-            font-size: 20px;
-        }
+.title{text-align:center;margin-bottom:30px}
+.title h2{font-size:34px;color:#0a3266}
+.title p{color:#55708f}
 
-        .bouton {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 28px;
-            background: white;
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-        }
+.grid{
+display:grid;grid-template-columns:repeat(6,1fr);gap:14px
+}
 
-        .bouton:hover {
-            background: #ff6600;
-            color: white;
-        }
+.card{
+background:white;border:1px solid #dce8f5;border-radius:12px;
+padding:22px 14px;text-align:center;
+box-shadow:0 5px 16px #0b3b6812
+}
 
-        h2 {
-            text-align: center;
-            color: #0066cc;
-            font-size: 34px;
-            margin-bottom: 30px;
-        }
+.card .icon{font-size:36px;margin-bottom:10px}
+.card h3{font-size:16px;color:#0a3266;margin-bottom:8px}
+.card p{font-size:13px;color:#526b84}
 
-        .intro {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-            font-size: 18px;
-        }
+.about{
+display:grid;grid-template-columns:1fr 1fr;
+gap:35px;align-items:center
+}
 
-        .cartes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
+.about img{
+width:100%;border-radius:16px;
+max-height:330px;object-fit:contain
+}
 
-        .carte {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
+.about h2{font-size:34px;color:#0a3266}
+.about h2 span{color:#ff7417}
 
-        .carte:hover {
-            transform: translateY(-5px);
-        }
+.features{
+display:flex;justify-content:space-between;
+gap:15px;margin-top:25px;text-align:center
+}
 
-        .carte h3 {
-            color: #0066cc;
-            margin-bottom: 12px;
-        }
+.features div{
+flex:1;border-right:1px solid #ccd7e2
+}
 
-        .realisation {
-            border-top: 4px solid #ff6600;
-        }
+.features div:last-child{border:0}
+.features b{display:block;color:#0a3266}
 
-        .contact {
-            text-align: center;
-            background: #eaf2ff;
-            max-width: none;
-        }
+.real-grid{
+display:grid;grid-template-columns:repeat(5,1fr);gap:14px
+}
 
-        .whatsapp {
-            background: #25D366;
-            color: white;
-        }
+.real{
+border:1px solid #dce8f5;border-radius:10px;
+overflow:hidden;background:white;
+box-shadow:0 4px 15px #0001
+}
 
-        .whatsapp:hover {
-            background: #128C7E;
-        }
+.real .pic{
+height:135px;
+background:linear-gradient(135deg,#0b4da8,#0a1d39);
+display:flex;align-items:center;justify-content:center;
+font-size:55px
+}
 
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
+.real div:last-child{padding:13px}
+.real h3{font-size:15px;color:#0a3266}
+.real p{font-size:12px;color:#607890}
 
-        footer strong {
-            color: #ff6600;
-        }
+.stats{
+background:linear-gradient(90deg,#0567e9,#063d9b);
+color:white;padding:25px 20px
+}
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 32px;
-            }
+.stats-grid{
+max-width:1200px;margin:auto;
+display:grid;grid-template-columns:repeat(4,1fr);
+text-align:center;gap:15px
+}
 
-            .hero h2 {
-                font-size: 32px;
-            }
+.stats b{display:block;font-size:27px}
 
-            .hero {
-                padding: 70px 20px;
-            }
-        }
-    </style>
+.contact{background:#eaf2fb}
+
+.contact-box{
+background:#071d39;color:white;border-radius:18px;
+padding:35px;display:flex;
+justify-content:space-between;align-items:center;gap:25px
+}
+
+.contact-box h2{font-size:30px}
+
+footer{
+background:#041326;color:white;padding:28px 20px
+}
+
+.footer{
+max-width:1200px;margin:auto;
+display:flex;justify-content:space-between;
+gap:25px;align-items:center
+}
+
+.footer img{
+width:60px;height:60px;
+object-fit:contain;border-radius:50%
+}
+
+.footer-brand{
+display:flex;gap:12px;align-items:center
+}
+
+.copy{
+text-align:center;color:#9fb1c6;
+font-size:12px;margin-top:20px
+}
+
+@media(max-width:900px){
+nav{gap:12px}
+.grid{grid-template-columns:repeat(3,1fr)}
+.real-grid{grid-template-columns:repeat(2,1fr)}
+.hero h2{font-size:40px}
+}
+
+@media(max-width:700px){
+header{position:relative}
+
+.nav{
+flex-wrap:wrap;
+justify-content:center
+}
+
+.brand{
+width:100%;
+justify-content:center
+}
+
+nav{
+order:3;
+width:100%;
+justify-content:center;
+flex-wrap:wrap;
+gap:14px
+}
+
+.hero-inner{
+grid-template-columns:1fr;
+text-align:center;
+padding:38px 18px
+}
+
+.hero-image{order:-1}
+.hero-image img{max-height:230px}
+
+.hero h2{font-size:38px}
+
+.checks{justify-content:center}
+
+.grid{grid-template-columns:repeat(2,1fr)}
+
+.about{grid-template-columns:1fr}
+
+.features{flex-wrap:wrap}
+
+.features div{
+min-width:45%;
+border:0
+}
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+.contact-box,.footer{
+flex-direction:column;
+text-align:center
+}
+
+.real-grid{
+grid-template-columns:1fr 1fr
+}
+}
+
+@media(max-width:420px){
+.grid,.real-grid{grid-template-columns:1fr}
+.hero h2{font-size:32px}
+}
+</style>
 </head>
 
 <body>
 
-    <!-- EN-TÊTE -->
-    <header>
-        <img src="logo.png" alt="Logo GMH MS8" class="logo">
+<header>
+<div class="nav">
 
-        <h1>GMH MS8</h1>
+<a class="brand" href="#accueil">
 
-        <p>
-            Innovation • Technologie • Solutions numériques
-        </p>
-    </header>
+<img src="logo.png" alt="Logo PLUS-TECH">
 
-    <!-- MENU -->
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#apropos">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#realisations">Nos réalisations</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<div>
+<h1>PLUS-<span>TECH</span></h1>
+<small>
+Réparations & Services<br>
+<b>Android / iPhone</b>
+</small>
+</div>
 
-    <!-- ACCUEIL -->
-    <section id="accueil" class="hero">
+</a>
 
-        <h2>Bienvenue chez GMH MS8</h2>
+<nav>
+<a href="#accueil">⌂ Accueil</a>
+<a href="#apropos">À propos</a>
+<a href="#services">Services</a>
+<a href="#realisations">Réalisations</a>
+<a href="#contact">Contact</a>
 
-        <p>
-            Votre partenaire pour les solutions technologiques,
-            la réparation mobile, les services informatiques
-            et les projets numériques modernes.
-        </p>
+<a class="whatsapp"
+href="https://wa.me/23672089545"
+target="_blank">
+☘ WhatsApp
+</a>
+</nav>
 
-        <a href="#services" class="bouton">
-            Découvrir nos services
-        </a>
+</div>
+</header>
 
-    </section>
 
-    <!-- À PROPOS -->
-    <section id="apropos">
+<main>
 
-        <h2>À propos de GMH MS8</h2>
+<section id="accueil" class="hero">
 
-        <p class="intro">
-            GMH MS8 est une plateforme dédiée à la technologie,
-            à l'innovation et aux solutions numériques.
-            Notre objectif est de proposer des services fiables,
-            modernes et accessibles.
-        </p>
+<div class="hero-inner">
 
-    </section>
+<div>
 
-    <!-- SERVICES -->
-    <section id="services">
+<div class="checks">
+<span>✓ Réparation</span>
+<span>✓ Vente</span>
+<span>✓ Assistance</span>
+<span>✓ Conseils</span>
+</div>
 
-        <h2>Nos services</h2>
+<h2>
+Bienvenue chez<br>
+<span>PLUS-TECH</span>
+</h2>
 
-        <div class="cartes">
+<p>
+Votre partenaire de confiance pour tous vos besoins
+en téléphonie, informatique et solutions numériques.
+</p>
 
-            <div class="carte">
-                <h3>📱 Réparation mobile</h3>
-                <p>
-                    Réparation et assistance pour smartphones
-                    Android et iPhone.
-                </p>
-            </div>
+<a class="cta"
+href="https://wa.me/23672089545"
+target="_blank">
 
-            <div class="carte">
-                <h3>💻 Informatique</h3>
-                <p>
-                    Maintenance, configuration et assistance
-                    informatique.
-                </p>
-            </div>
+💬 Contactez-nous sur WhatsApp<br>
++236 72 08 95 45
 
-            <div class="carte">
-                <h3>⚙️ Solutions numériques</h3>
-                <p>
-                    Création et accompagnement dans vos projets
-                    numériques.
-                </p>
-            </div>
+</a>
 
-            <div class="carte">
-                <h3>🔧 Assistance technique</h3>
-                <p>
-                    Conseils, dépannage et accompagnement
-                    technique.
-                </p>
-            </div>
+</div>
 
-        </div>
+<div class="hero-image">
+<img src="logo.png" alt="PLUS-TECH">
+</div>
 
-    </section>
+</div>
 
-    <!-- RÉALISATIONS -->
-    <section id="realisations">
+</section>
 
-        <h2>Nos réalisations</h2>
 
-        <p class="intro">
-            Découvrez quelques domaines dans lesquels GMH MS8
-            intervient pour accompagner ses clients et développer
-            des solutions modernes.
-        </p>
+<section id="services" class="section">
 
-        <div class="cartes">
+<div class="container">
 
-            <div class="carte realisation">
-                <h3>📱 Réparation Android & iPhone</h3>
-                <p>
-                    Services de réparation, diagnostic et
-                    assistance pour appareils mobiles.
-                </p>
-            </div>
+<div class="title">
+<h2>Nos services</h2>
+<p>Des solutions complètes pour vous simplifier la vie</p>
+</div>
 
-            <div class="carte realisation">
-                <h3>💻 Projets informatiques</h3>
-                <p>
-                    Création et mise en place de solutions
-                    informatiques adaptées aux besoins.
-                </p>
-            </div>
+<div class="grid">
 
-            <div class="carte realisation">
-                <h3>🌐 Présence numérique</h3>
-                <p>
-                    Création de sites et développement de
-                    projets numériques.
-                </p>
-            </div>
+<div class="card">
+<div class="icon">🔧</div>
+<h3>Réparation téléphone</h3>
+<p>Réparation rapide et fiable de vos smartphones Android et iPhone.</p>
+</div>
 
-            <div class="carte realisation">
-                <h3>🛠️ Maintenance</h3>
-                <p>
-                    Assistance et maintenance pour assurer
-                    le bon fonctionnement des équipements.
-                </p>
-            </div>
+<div class="card">
+<div class="icon">📱</div>
+<h3>Vente de téléphones</h3>
+<p>Appareils neufs et occasion de qualité à prix abordables.</p>
+</div>
 
-        </div>
+<div class="card">
+<div class="icon">💻</div>
+<h3>Ordinateurs & accessoires</h3>
+<p>Vente et maintenance d'ordinateurs, tablettes et accessoires.</p>
+</div>
 
-    </section>
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>Déblocage & logiciels</h3>
+<p>Solutions logicielles et assistance pour vos appareils.</p>
+</div>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
+<div class="card">
+<div class="icon">🤖</div>
+<h3>Applications & comptes</h3>
+<p>Installation d'applications et accompagnement numérique.</p>
+</div>
 
-        <h2>Contactez GMH MS8</h2>
+<div class="card">
+<div class="icon">☁️</div>
+<h3>Conseil & accompagnement</h3>
+<p>Un service personnalisé pour vous guider dans vos choix.</p>
+</div>
 
-        <p>
-            Vous avez un projet ou besoin d'une assistance
-            technique ? Contactez-nous directement sur WhatsApp.
-        </p>
+</div>
+</div>
+</section>
 
-        <a
-            class="bouton whatsapp"
-            href="https://wa.me/23672089545"
-            target="_blank">
-            💬 WhatsApp : +236 72 08 95 45
-        </a>
 
-    </section>
+<section id="apropos" class="section alt">
 
-    <!-- PIED DE PAGE -->
-    <footer>
+<div class="container about">
 
-        <p>
-            © 2026 <strong>GMH MS8</strong> — Tous droits réservés.
-        </p>
+<img src="logo.png" alt="ETS GMH MS8">
 
-        <p>
-            Innovation • Technologie • Solutions numériques
-        </p>
+<div>
 
-    </footer>
+<h2>
+À propos de <span>PLUS-TECH</span>
+</h2>
+
+<p>
+<b>PLUS-TECH (ETS GMH MS8)</b> est une entreprise
+spécialisée dans la réparation de téléphones,
+la vente d'appareils et les solutions numériques.
+</p>
+
+<br>
+
+<p>
+Nous mettons notre expertise et notre savoir-faire
+à votre service pour vous proposer des solutions
+rapides, fiables et adaptées à vos besoins.
+</p>
+
+<div class="features">
+
+<div>🛡️<b>Service fiable</b></div>
+<div>⚡<b>Rapidité</b></div>
+<div>⭐<b>Qualité</b></div>
+<div>🤝<b>Satisfaction</b></div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="realisations" class="section">
+
+<div class="container">
+
+<div class="title">
+<h2>Nos réalisations</h2>
+<p>Quelques exemples de notre travail</p>
+</div>
+
+<div class="real-grid">
+
+<article class="real">
+<div class="pic">📱</div>
+<div>
+<h3>Réparation d'écran</h3>
+<p>Remplacement d'écran iPhone et Android.</p>
+</div>
+</article>
+
+<article class="real">
+<div class="pic">📲</div>
+<div>
+<h3>Vente de téléphones</h3>
+<p>Appareils neufs et occasion.</p>
+</div>
+</article>
+
+<article class="real">
+<div class="pic">💻</div>
+<div>
+<h3>Installation d'applications</h3>
+<p>Comptes, logiciels et applications.</p>
+</div>
+</article>
+
+<article class="real">
+<div class="pic">🎧</div>
+<div>
+<h3>Accessoires</h3>
+<p>Coques, chargeurs, écouteurs et accessoires.</p>
+</div>
+</article>
+
+<article class="real">
+<div class="pic">🔒</div>
+<div>
+<h3>Assistance appareils</h3>
+<p>Diagnostic et solutions adaptées.</p>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div>
+📱
+<b>+1000</b>
+Appareils pris en charge
+</div>
+
+<div>
+👥
+<b>+800</b>
+Clients satisfaits
+</div>
+
+<div>
+🛡️
+<b>100%</b>
+Fiabilité & sécurité
+</div>
+
+<div>
+⏰
+<b>24/7</b>
+À votre écoute
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact" class="section contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<div>
+<h2>Vous avez un problème ?</h2>
+<p>
+Contactez-nous dès maintenant pour une assistance
+rapide ou une prise de rendez-vous.
+</p>
+</div>
+
+<a class="cta"
+href="https://wa.me/23672089545"
+target="_blank">
+
+💬 Écrire sur WhatsApp<br>
++236 72 08 95 45
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="footer">
+
+<div class="footer-brand">
+
+<img src="logo.png" alt="PLUS-TECH">
+
+<div>
+<strong>PLUS-<span style="color:#ff7417">TECH</span></strong><br>
+<small>
+Réparations & Services<br>
+<span style="color:#53d769">Android / iPhone</span>
+</small>
+</div>
+
+</div>
+
+<div>
+📞 +236 72 08 95 45<br>
+📍 Ensemble, construisons votre avenir numérique !
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 PLUS-TECH (ETS GMH MS8). Tous droits réservés.
+</div>
+
+</footer>
 
 </body>
 </html>

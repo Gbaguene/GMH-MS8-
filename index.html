@@ -9,108 +9,131 @@
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
             background: #f4f7fb;
             color: #222;
+            line-height: 1.7;
         }
 
         header {
             background: linear-gradient(135deg, #0066ff, #003b99);
             color: white;
-            padding: 25px 15px;
             text-align: center;
+            padding: 35px 20px;
+        }
+
+        .logo {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            border-radius: 50%;
+            margin-bottom: 15px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 32px;
+            font-size: 42px;
+            margin-bottom: 5px;
         }
 
         header p {
-            margin: 8px 0 0;
-            font-size: 16px;
+            font-size: 20px;
         }
 
         nav {
             background: white;
-            padding: 12px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         nav a {
-            color: #0066ff;
             text-decoration: none;
+            color: #0066cc;
             font-weight: bold;
-            margin: 0 8px;
-            font-size: 14px;
+            padding: 8px 15px;
         }
 
-        .hero {
-            background: linear-gradient(135deg, #007bff, #001f66);
-            color: white;
-            text-align: center;
+        nav a:hover {
+            color: #ff6600;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
             padding: 70px 20px;
         }
 
+        .hero {
+            max-width: none;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #0066ff, #003b99);
+            padding: 100px 20px;
+        }
+
         .hero h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
+            font-size: 42px;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 800px;
             margin: auto;
-            line-height: 1.7;
-            font-size: 17px;
+            font-size: 20px;
         }
 
         .bouton {
             display: inline-block;
-            margin-top: 25px;
-            padding: 14px 25px;
+            margin-top: 30px;
+            padding: 14px 28px;
             background: white;
-            color: #0066ff;
-            border-radius: 30px;
+            color: #0066cc;
             text-decoration: none;
             font-weight: bold;
+            border-radius: 30px;
         }
 
-        section {
-            padding: 50px 20px;
-            max-width: 1000px;
-            margin: auto;
+        .bouton:hover {
+            background: #ff6600;
+            color: white;
         }
 
-        section h2 {
+        h2 {
             text-align: center;
-            color: #0056d6;
+            color: #0066cc;
+            font-size: 34px;
             margin-bottom: 30px;
         }
 
-        .presentation {
+        .intro {
             text-align: center;
-            line-height: 1.8;
-            font-size: 17px;
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
         }
 
-        .services {
+        .cartes {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .carte {
             background: white;
-            padding: 25px;
+            padding: 30px 20px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
@@ -122,201 +145,232 @@
         }
 
         .carte h3 {
-            color: #0066ff;
+            color: #0066cc;
+            margin-bottom: 12px;
+        }
+
+        .realisation {
+            border-top: 4px solid #ff6600;
         }
 
         .contact {
-            background: #0066ff;
-            color: white;
             text-align: center;
-            border-radius: 20px;
-            padding: 40px 20px;
-        }
-
-        .contact h2 {
-            color: white;
+            background: #eaf2ff;
+            max-width: none;
         }
 
         .whatsapp {
-            display: inline-block;
-            margin-top: 15px;
-            background: white;
-            color: #0066ff;
-            padding: 14px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp:hover {
+            background: #128C7E;
         }
 
         footer {
-            background: #07152e;
+            background: #111827;
             color: white;
             text-align: center;
-            padding: 25px 15px;
-            margin-top: 40px;
+            padding: 30px 20px;
         }
 
-        footer p {
-            margin: 5px;
+        footer strong {
+            color: #ff6600;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>GMH MS8</h1>
-    <p>Innovation • Technologie • Solutions numériques</p>
-</header>
+    <!-- EN-TÊTE -->
+    <header>
+        <img src="logo.png" alt="Logo GMH MS8" class="logo">
 
-<nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#apropos">À propos</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section class="hero" id="accueil">
-
-    <h2>Bienvenue chez GMH MS8</h2>
-
-    <p>
-        Votre plateforme numérique dédiée à l'innovation,
-        aux solutions technologiques et à la réalisation
-        de projets modernes.
-    </p>
-
-    <a class="bouton" href="#services">
-        Découvrir nos services
-    </a>
-
-</section>
-
-<section id="apropos">
-
-    <h2>À propos de GMH MS8</h2>
-
-    <div class="presentation">
+        <h1>GMH MS8</h1>
 
         <p>
-            GMH MS8 est une initiative tournée vers le numérique,
-            la technologie et l'innovation.
+            Innovation • Technologie • Solutions numériques
         </p>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#realisations">Nos réalisations</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ACCUEIL -->
+    <section id="accueil" class="hero">
+
+        <h2>Bienvenue chez GMH MS8</h2>
 
         <p>
-            Notre ambition est de transformer les idées en projets
-            concrets et de proposer des solutions simples, modernes
-            et accessibles.
+            Votre partenaire pour les solutions technologiques,
+            la réparation mobile, les services informatiques
+            et les projets numériques modernes.
         </p>
 
-        <p>
-            Nous croyons qu'une bonne idée peut devenir une grande
-            réalisation lorsqu'elle est accompagnée de créativité,
-            de détermination et de technologie.
+        <a href="#services" class="bouton">
+            Découvrir nos services
+        </a>
+
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos">
+
+        <h2>À propos de GMH MS8</h2>
+
+        <p class="intro">
+            GMH MS8 est une plateforme dédiée à la technologie,
+            à l'innovation et aux solutions numériques.
+            Notre objectif est de proposer des services fiables,
+            modernes et accessibles.
         </p>
 
-    </div>
+    </section>
 
-</section>
+    <!-- SERVICES -->
+    <section id="services">
 
-<section id="services">
+        <h2>Nos services</h2>
 
-    <h2>Nos services</h2>
+        <div class="cartes">
 
-    <div class="services">
+            <div class="carte">
+                <h3>📱 Réparation mobile</h3>
+                <p>
+                    Réparation et assistance pour smartphones
+                    Android et iPhone.
+                </p>
+            </div>
 
-        <div class="carte">
-            <h3>💻 Solutions numériques</h3>
-            <p>
-                Création et accompagnement de projets numériques
-                adaptés à vos besoins.
-            </p>
+            <div class="carte">
+                <h3>💻 Informatique</h3>
+                <p>
+                    Maintenance, configuration et assistance
+                    informatique.
+                </p>
+            </div>
+
+            <div class="carte">
+                <h3>⚙️ Solutions numériques</h3>
+                <p>
+                    Création et accompagnement dans vos projets
+                    numériques.
+                </p>
+            </div>
+
+            <div class="carte">
+                <h3>🔧 Assistance technique</h3>
+                <p>
+                    Conseils, dépannage et accompagnement
+                    technique.
+                </p>
+            </div>
+
         </div>
 
-        <div class="carte">
-            <h3>📱 Services mobiles</h3>
-            <p>
-                Solutions et projets destinés aux utilisateurs
-                de smartphones et aux plateformes mobiles.
-            </p>
-        </div>
+    </section>
 
-        <div class="carte">
-            <h3>🌐 Projets web</h3>
-            <p>
-                Création de sites et de plateformes web modernes,
-                rapides et adaptés aux téléphones.
-            </p>
-        </div>
+    <!-- RÉALISATIONS -->
+    <section id="realisations">
 
-        <div class="carte">
-            <h3>🚀 Innovation</h3>
-            <p>
-                Développement de nouvelles idées et recherche
-                de solutions technologiques innovantes.
-            </p>
-        </div>
+        <h2>Nos réalisations</h2>
 
-    </div>
-
-</section>
-
-<section>
-
-    <h2>Notre vision</h2>
-
-    <div class="presentation">
-
-        <p>
-            Construire un espace numérique où les idées,
-            la technologie et la créativité se rencontrent.
+        <p class="intro">
+            Découvrez quelques domaines dans lesquels GMH MS8
+            intervient pour accompagner ses clients et développer
+            des solutions modernes.
         </p>
 
-        <p>
-            <strong>
-                « Chaque idée peut devenir une solution. »
-            </strong>
-        </p>
+        <div class="cartes">
 
-    </div>
+            <div class="carte realisation">
+                <h3>📱 Réparation Android & iPhone</h3>
+                <p>
+                    Services de réparation, diagnostic et
+                    assistance pour appareils mobiles.
+                </p>
+            </div>
 
-</section>
+            <div class="carte realisation">
+                <h3>💻 Projets informatiques</h3>
+                <p>
+                    Création et mise en place de solutions
+                    informatiques adaptées aux besoins.
+                </p>
+            </div>
 
-<section id="contact">
+            <div class="carte realisation">
+                <h3>🌐 Présence numérique</h3>
+                <p>
+                    Création de sites et développement de
+                    projets numériques.
+                </p>
+            </div>
 
-    <div class="contact">
+            <div class="carte realisation">
+                <h3>🛠️ Maintenance</h3>
+                <p>
+                    Assistance et maintenance pour assurer
+                    le bon fonctionnement des équipements.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
 
         <h2>Contactez GMH MS8</h2>
 
         <p>
-            Vous avez un projet, une idée ou une question ?
-            Nous sommes disponibles pour échanger avec vous.
+            Vous avez un projet ou besoin d'une assistance
+            technique ? Contactez-nous directement sur WhatsApp.
         </p>
 
         <a
-            class="whatsapp"
+            class="bouton whatsapp"
             href="https://wa.me/23672089545"
             target="_blank">
-            📱 Nous contacter sur WhatsApp
+            💬 WhatsApp : +236 72 08 95 45
         </a>
 
-    </div>
+    </section>
 
-</section>
+    <!-- PIED DE PAGE -->
+    <footer>
 
-<footer>
+        <p>
+            © 2026 <strong>GMH MS8</strong> — Tous droits réservés.
+        </p>
 
-    <p><strong>GMH MS8</strong></p>
+        <p>
+            Innovation • Technologie • Solutions numériques
+        </p>
 
-    <p>
-        Innovation • Technologie • Solutions numériques
-    </p>
-
-    <p>
-        © 2026 GMH MS8 — Tous droits réservés
-    </p>
-
-</footer>
+    </footer>
 
 </body>
 </html>
